@@ -1,0 +1,16 @@
+.main , h1, p {
+    width: auto;
+    text-align: center;
+    font-family: 'Trebuchet MS';
+}
+
+.lista{
+    list-style: none;
+    padding-left: 0px;
+    font-family: 'Courier New';
+}
+
+.formulario{
+    width: auto;
+    padding: 10px;
+}
