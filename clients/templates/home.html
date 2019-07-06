@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{%block content%}
+    <div class='main'>
+    <h1>Clients Challenge</h1>
+    {% if user.is_authenticated %}
+        <h4>Bem vindo(a) {{user.username}}</h4>
+        <ul class='lista'>
+        <a href= "{% url 'listar_clients' %} "><button class ="login-btn btn btn-primary" type="button" name="button"><li><span class="glyphicon glyphicon-eye-open"></span> Visualizar Clientes</li></button></a>
+        <br><br>
+        <a href= "{% url 'sair' %} "><button class ="login-btn btn btn-danger" type="button" name="button"><li><span class="glyphicon glyphicon-log-in"></span> Logout</li></button></a>
+    </ul>
+    {% else %}   
+        <h4>Bem vindo(a)</h4>
+        <h4>Faça login para visualizar os clientes.</h4>
+        <!-- <a href="{% url 'social:begin' 'facebook' %}"><h4>Logue com Facebook</h4></a> -->
+    
+    <ul class='lista'>
+        <a href= "{% url 'login' %} "><button class ="login-btn btn btn-primary" type="button" name="button"><li><span class="glyphicon glyphicon-log-in"></span> Login</li></button></a>
+        <a href= "{% url 'cadastro'%}"><button class ="signup-btn btn btn-primary" type="button" name="button"><li><span class="glyphicon glyphicon-user"></span> Cadastre-se </li></button></a>
+    </ul>
+    </div>
+    {% endif %}
+{% endblock %}

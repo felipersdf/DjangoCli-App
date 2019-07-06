@@ -1,0 +1,8 @@
+{% extends 'layout.html' %}
+{%block content%}
+    <form method="post">
+    {% csrf_token %}
+    <h3>Você deseja excluir o cliente {{cliente.nome}} ?</h3>
+        <button type="submit" class="btn btn-success">Sim</button>
+    </form>
+{%endblock%}

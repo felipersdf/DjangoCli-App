@@ -1,0 +1,14 @@
+{% extends 'layout.html'%}
+{% load crispy_forms_tags %}
+{%block content%}
+
+ <form method="POST" novalidate class='formulario'>
+   {% csrf_token %}
+   <div class="form-group" >
+     {{ user_form|crispy }}
+
+  </div>
+    <button type="submit" class="btn btn-success">Register</button>
+    </form>
+
+{%endblock%}

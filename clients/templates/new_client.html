@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{%block create%}
+<li><a href="{% url 'listar_clients' %}">Visualizar Clientes</a></li>
+{%endblock%}
+
+{%block content %}
+<form method="post" role="form">
+   {% csrf_token %}
+   
+   {% for field in form %}
+    <div class="form-group">
+                {{field.label_tag}}<br>
+                {{field}}
+            </div>
+        {% endfor %}
+   
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
+
+    {%endblock%}

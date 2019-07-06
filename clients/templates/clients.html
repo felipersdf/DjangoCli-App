@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{%block content%}
+
+<h2>Clientes Cadastrados</h2>
+<table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Endereço</th>
+            <th scope="col">Bairro</th>
+            <th scope="col">Numero</th>
+            <th scope="col">Cidade</th>
+            <th scope="col">Estado</th>
+            <th scope="col">País</th>
+            <th scope="col">CEP</th>
+          </tr>
+        </thead>
+        <tbody>
+
+            {% for client in clients %}
+            </tr>
+                <td>{{client.nome}}</td>
+                <td>{{client.telefone}}</td>
+                <td>{{client.logradouro}}</td>
+                <td>{{client.bairro}}</td>
+                <td>{{client.numero}}</td>
+                <td>{{client.cidade}}</td>
+                <td>{{client.estado}}</td>
+                <td>{{client.país}}</td>
+                <td>{{client.cep}}</td>
+                <td><a href="{% url 'atualizar_cliente' client.id %}"> <span class="glyphicon glyphicon-edit"></span></a></td>
+                <td><a href="{% url 'excluir_cliente' client.id %}"> <span class="glyphicon glyphicon-remove"></span></a></td>
+            </tr>
+            {% endfor %}
+            <a href= "{% url 'criar_cliente' %}"><button type="button" class="btn btn-primary">Adicionar Cliente</button></a>
+        </tbody>
+      </table>
+{%endblock%}
