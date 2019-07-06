@@ -144,8 +144,6 @@ STATICFILES_DIRS = (
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-SOCIAL_AUTH_FACEBOOK_KEY = '1297732800386202'  # App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = '7702c03435ae2f581d6dfe00e430cfde'  # App Secret
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
